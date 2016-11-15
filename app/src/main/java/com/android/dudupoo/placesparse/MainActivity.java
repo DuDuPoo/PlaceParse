@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity
     {
 
         //hello world..
+        //Another Comment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView textView= (TextView) findViewById(R.id.textFolder);
