@@ -2,6 +2,9 @@ package com.android.dudupoo.placesparse;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -19,5 +22,7 @@ public class MainActivity extends AppCompatActivity
         //hello world..
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView textView= (TextView) findViewById(R.id.textFolder);
+        textView.setText("Hello World");
     }
 }
