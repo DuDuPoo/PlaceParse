@@ -6,10 +6,10 @@ package com.android.dudupoo.placesparse.pojo.place;
 
 public class Photo
 {
-    private double width;
+    private int width;
     private String photo_reference;
 
-    public Photo(double width, String photo_reference)
+    public Photo(int width, String photo_reference)
     {
         this.width = width;
         this.photo_reference = photo_reference;
@@ -24,12 +24,12 @@ public class Photo
                 '}';
     }
 
-    public double getWidth()
+    public int getWidth()
     {
         return width;
     }
 
-    public void setWidth(double width)
+    public void setWidth(int width)
     {
         this.width = width;
     }
