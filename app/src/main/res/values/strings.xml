@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PlacesParse</string>
+    <string name="photo_url">https://maps.googleapis.com/maps/api/place/photo?</string>
+
 </resources>

@@ -29,7 +29,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             super(itemView);
             this.cardView = itemView;
 //            imageView = (ImageView) itemView.findViewById(R.id.cardImageView);
-            textView = (TextView) cardView.findViewById(R.id.cardTextView);
+            textView = (TextView) cardView.findViewById(R.id.placeNameTextView);
         }
     }
 

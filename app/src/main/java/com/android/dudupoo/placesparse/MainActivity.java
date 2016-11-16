@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity
 {
 //https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&keyword=cruise&key=AIzaSyBy8REIGr6qiBPBPS_fy2_UqEZ6Vs_h27E
-
+//Photo url https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=&key=
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -57,10 +57,13 @@ public class MainActivity extends AppCompatActivity
                 HttpHandler httpHandler = new HttpHandler(url);
                 result = httpHandler.getURLResponse();
                 JSONObject mainResponse = new JSONObject(result);
+
                 JSONArray resultsKeyArray = mainResponse.getJSONArray("results");
                 Log.d("ResultsKeyArray", resultsKeyArray.toString());
+
                 JSONObject placeJson = resultsKeyArray.getJSONObject(0);
                 Log.d("PLACE", placeJson.toString());
+
                 String place= placeJson.getString("name");
                 placesNames.add(place);
 
