@@ -20,9 +20,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
 {
-//https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&keyword=cruise&key=AIzaSyBy8REIGr6qiBPBPS_fy2_UqEZ6Vs_h27E
-//Photo url https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=&key=
-    //https://maps.googleapis.com/maps/api/place/radarsearch/json?location=51.503186,-0.126446&radius=5000&type=museum&key=YOUR_API_KEY
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -38,7 +35,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         GetPlacesTask getPlacesTask = new GetPlacesTask();
-        getPlacesTask.execute(new String[]{"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=50000&type=Scuba+Diving&keyword=Scuba+Diving&key=AIzaSyBy8REIGr6qiBPBPS_fy2_UqEZ6Vs_h27E"});
+        getPlacesTask.execute(new String[]{"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=50000&type="+R.string.TYPE+"&keyword="+R.string.KEYWORD+"&key="+R.string.API_KEY});
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
@@ -75,17 +72,6 @@ public class MainActivity extends AppCompatActivity
                 for (int i = 0; i<resultsKeyArray.length(); i++)
                 {
                     JSONObject placeJson = resultsKeyArray.getJSONObject(i);
-                    /*"photos": [
-                                    {
-                                        "height": 720,
-                                        "html_attributions":
-                                                            [
-                                                                "<a href=\"https://maps.google.com/maps/contrib/104794428094895859766/photos\">Gavin Biggadike</a>"
-                                                            ],
-                                        "photo_reference": "CoQBdwAAAFlet6RKfbRA_1SsBFb_W3TxaOo8Iianzv5xznPNa61WqISfOsuB50bzN6o24nI0Af8kV9Grt0Myhpg68sRRkBaQgpB_aeGjNOktaCl3sfOI7SexKjHWtFl1iadFQ5lwPDCrv0TY8rktzSIAY2vYK3UlYtSriB-eD6YBYPrgsE_GEhAHwTDHhE7Fgxs01sk91emWGhQtilzsxIS9FtYzOZexRDNYjimdMg",
-                                        "width": 960
-                                    }
-                                ],*/
                     if(placeJson.has("photos"))
                     {
                         JSONArray photoArray = placeJson.getJSONArray("photos");
@@ -121,7 +107,7 @@ public class MainActivity extends AppCompatActivity
                 Photo placePhoto = place.getPlacePhoto();
                 if(placePhoto!=null)
                 {
-                    String urlString = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=" + placePhoto.getWidth() + "&photoreference=" + placePhoto.getPhoto_reference() + "&key=" + "AIzaSyBy8REIGr6qiBPBPS_fy2_UqEZ6Vs_h27E";
+                    String urlString = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=" + placePhoto.getWidth() + "&photoreference=" + placePhoto.getPhoto_reference() + "&key=" + R.string.API_KEY;
                     imageUrls.add(urlString);
                     Log.d("PhotoURL", urlString);
                 }
@@ -133,8 +119,5 @@ public class MainActivity extends AppCompatActivity
             adapter.notifyDataSetChanged();
         }
     }//End of GetPlacesTask
-
-
-
 }
 

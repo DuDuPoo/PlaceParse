@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">PlacesParse</string>
     <string name="photo_url">https://maps.googleapis.com/maps/api/place/photo?</string>
-
+    <string name="API_KEY">place your api key here</string>
+    <string name="TYPE">Place your type here</string>
+    <string name="KEYWORD">place your keyword here</string>
 </resources>
