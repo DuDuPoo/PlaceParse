@@ -1,7 +1,6 @@
 package com.android.dudupoo.placesparse;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -24,7 +23,6 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     ArrayList<Place> placesArrayList = new ArrayList<>();
-    ArrayList<Bitmap> placePhotoArrayList = new ArrayList<>();
     ArrayList<String> imageUrls= new ArrayList<>();
     private Context context;
 

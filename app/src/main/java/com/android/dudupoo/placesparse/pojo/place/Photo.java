@@ -1,9 +1,5 @@
 package com.android.dudupoo.placesparse.pojo.place;
 
-/**
- * Created by rachnagoel on 16/11/16.
- */
-
 public class Photo
 {
     private int width;

@@ -16,9 +16,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-/**
- * Created by rachnagoel on 15/11/16.
- */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>
 {
     private ArrayList<String> imagesURLArray;
@@ -39,12 +36,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             ratingBar = (RatingBar) cardView.findViewById(R.id.placeRating);
         }
     }
-
-//    public RecyclerViewAdapter(ArrayList<Image> imagesArray, ArrayList<String> text)
-//    {
-//        this.imagesArray = imagesArray;
-//        this.textArray = text;
-//    }
 
     public RecyclerViewAdapter(ArrayList<Place> placesArrayList, ArrayList<String> placePhotoURLArrayList, Context context)
     {

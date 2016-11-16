@@ -9,9 +9,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/**
- * Created by rachnagoel on 15/11/16.
- */
 public class HttpHandler
 {
     private URL url;
